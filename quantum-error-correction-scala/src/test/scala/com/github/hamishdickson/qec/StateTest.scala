@@ -8,4 +8,10 @@ class StateTest extends FlatSpec with Matchers {
 
     qubit.qec() should be (qubit)
   }
+
+  "A qubit" should "be normalized" in {
+    val qubit: Qubit = Qubit(2, 2)
+
+    qubit.normalize().x should be (2 / Math.sqrt(8))
+  }
 }
